@@ -46,11 +46,9 @@ function GoTop() {
 }
 
 function PageContainer() {
-  const location = useLocation();
-
   return (
-    <div key={location.pathname} className="page-transition">
-      <Routes location={location}>
+    <div className="w-full">
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/flights" element={<Flights />} />
         <Route path="/umrah" element={<Umrah />} />

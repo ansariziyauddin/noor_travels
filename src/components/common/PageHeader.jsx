@@ -43,20 +43,12 @@ export default function PageHeader({ kicker, title, description, breadcrumbs = [
           </div>
         )}
 
-        {kicker && (
-          <Reveal>
-            <p className="kicker text-sun">{kicker}</p>
-          </Reveal>
-        )}
-        <Reveal>
-          <h1 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-tight">{title}</h1>
-        </Reveal>
+        {kicker && <p className="kicker text-sun">{kicker}</p>}
+        <h1 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.05] tracking-tight">{title}</h1>
         {description && (
-          <Reveal>
-            <p className="mt-4 max-w-2xl text-[clamp(16px,1.6vw,19px)] leading-relaxed text-white/80">
-              {description}
-            </p>
-          </Reveal>
+          <p className="mt-4 max-w-2xl text-[clamp(16px,1.6vw,19px)] leading-relaxed text-white/80">
+            {description}
+          </p>
         )}
       </div>
     </section>

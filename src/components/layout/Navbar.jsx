@@ -134,9 +134,9 @@ export default function Navbar() {
       </div>
 
       {/* Main Luxury Glass Navbar */}
-      <div className={`mx-auto transition-all duration-300 ${scrolled ? 'mt-1 w-[min(1360px,calc(100%_-_20px))]' : 'mt-2 w-[min(1360px,calc(100%_-_24px))]'}`}>
+      <div className="mx-auto mt-2 w-[min(1360px,calc(100%_-_24px))]">
         <nav
-          className={`flex items-center justify-between gap-2 xl:gap-4 rounded-2xl border px-3.5 sm:px-4 xl:px-5 py-2.5 transition-all duration-300 ${
+          className={`flex items-center justify-between gap-2 xl:gap-4 rounded-2xl border px-3.5 sm:px-4 xl:px-5 py-2.5 transition-[background-color,border-color,box-shadow] duration-200 ${
             scrolled
               ? 'border-black/10 bg-white/95 shadow-[0_16px_40px_rgba(4,29,31,0.12)] backdrop-blur-xl'
               : 'border-white/20 bg-white/90 shadow-[0_12px_36px_rgba(0,0,0,0.08)] backdrop-blur-lg'
@@ -170,9 +170,9 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative px-2.5 xl:px-3 py-2 text-sm font-bold transition-all duration-200 rounded-xl whitespace-nowrap shrink-0 ${
+                  `relative px-2.5 xl:px-3 py-2 text-sm font-bold transition-colors duration-150 rounded-xl whitespace-nowrap shrink-0 ${
                     isActive
-                      ? 'text-deep bg-[#eef7f4] font-black shadow-xs'
+                      ? 'text-deep bg-[#eef7f4] shadow-xs'
                       : 'text-slate-700 hover:text-deep hover:bg-slate-100/70'
                   }`
                 }
@@ -198,9 +198,9 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setServicesDropdown(!servicesDropdown)}
-                className={`flex items-center gap-1.5 rounded-xl px-2.5 xl:px-3 py-2 text-sm font-bold transition-all duration-200 whitespace-nowrap shrink-0 ${
+                className={`flex items-center gap-1.5 rounded-xl px-2.5 xl:px-3 py-2 text-sm font-bold transition-colors duration-150 whitespace-nowrap shrink-0 ${
                   servicesDropdown || location.pathname.includes('/visa') || location.pathname.includes('/transport') || location.pathname.includes('/deals') || location.pathname.includes('/services')
-                    ? 'text-deep bg-[#eef7f4] font-black'
+                    ? 'text-deep bg-[#eef7f4]'
                     : 'text-slate-700 hover:text-deep hover:bg-slate-100/70'
                 }`}
               >
@@ -254,9 +254,9 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `px-2.5 xl:px-3 py-2 text-sm font-bold transition-all duration-200 rounded-xl whitespace-nowrap shrink-0 ${
+                `px-2.5 xl:px-3 py-2 text-sm font-bold transition-colors duration-150 rounded-xl whitespace-nowrap shrink-0 ${
                   isActive
-                    ? 'text-deep bg-[#eef7f4] font-black'
+                    ? 'text-deep bg-[#eef7f4]'
                     : 'text-slate-700 hover:text-deep hover:bg-slate-100/70'
                 }`
               }
@@ -268,9 +268,9 @@ export default function Navbar() {
             <NavLink
               to="/apps"
               className={({ isActive }) =>
-                `relative px-2.5 xl:px-3 py-2 text-sm font-bold transition-all duration-200 rounded-xl whitespace-nowrap shrink-0 ${
+                `relative px-2.5 xl:px-3 py-2 text-sm font-bold transition-colors duration-150 rounded-xl whitespace-nowrap shrink-0 ${
                   isActive
-                    ? 'text-deep bg-[#eef7f4] font-black shadow-xs'
+                    ? 'text-deep bg-[#eef7f4] shadow-xs'
                     : 'text-slate-700 hover:text-deep hover:bg-slate-100/70'
                 }`
               }
