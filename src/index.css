@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  button, input, select, textarea { font: inherit; }
+}
+
+@layer components {
+  .wrap { width: min(1240px, calc(100% - 40px)); margin-left: auto; margin-right: auto; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-extrabold transition duration-200 hover:-translate-y-0.5 hover:shadow-xl; }
+  .btn-primary { @apply bg-deep text-white; }
+  .btn-gold { @apply bg-sun text-[#261905]; }
+  .btn-light { @apply border border-black/10 bg-white text-deep; }
+  .kicker { @apply mb-3 flex items-center gap-3 text-xs font-black uppercase tracking-[0.14em] text-coral; }
+  .kicker::before { content: ''; @apply h-0.5 w-8 bg-current; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s cubic-bezier(0.16, 1, 0.3, 1), transform .5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @keyframes pageFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-transition {
+    animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
